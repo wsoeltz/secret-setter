@@ -110,6 +110,11 @@ body {
   grid-column: 1;
 }
 
+h1 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
 h2 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
@@ -184,8 +189,49 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+.tap-toggle small {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
 }
 
 .tap-toggle ol {
-  margin-bottom: 0;
+  margin: 0;
+}
+
+.form__box {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__box form label {
+  margin-bottom: 0.4rem;
+}
+
+.form__box form input {
+  margin-bottom: 1rem;
+  font-family: Courier, monospace;
+  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid #efefef;
+  outline: none;
 }
