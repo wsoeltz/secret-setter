@@ -255,6 +255,7 @@ button {
     padding: 2vw 3vw;
   }
   .tap-toggle {
+    height: 22vw;
     margin-bottom: 4vw;
   }
   .tap-toggle ol {
