@@ -52,18 +52,35 @@ socket.on('newRole', roles => {
 			$pregameContainer.classList.add('hidden');
 			$activeGameContainer.classList.remove('hidden');
 
+			const showContent = elm => {
+		    elm.querySelector('.title').classList.add('hidden');
+		    elm.querySelector('.content').classList.remove('hidden');
+			}
+			const hideContent = elm => {
+		    elm.querySelector('.title').classList.remove('hidden');
+		    elm.querySelector('.content').classList.add('hidden');
+			}
+
 			Array.from(document.querySelectorAll('.tap-toggle')).forEach(elm => {
-			  elm.addEventListener('mousedown', () => {
-			    elm.querySelector('.title').classList.add('hidden');
-			    elm.querySelector('.content').classList.remove('hidden');
+			  elm.addEventListener('mousedown', (e) => {
+			  	e.preventDefault();
+			    showContent(elm);
 			  });
-			  elm.addEventListener('mouseup', () => {
-			    elm.querySelector('.title').classList.remove('hidden');
-			    elm.querySelector('.content').classList.add('hidden');
+			  elm.addEventListener('mouseup', (e) => {
+			  	e.preventDefault();
+			  	hideContent(elm);
 			  });
-			  elm.addEventListener('mouseleave', () => {
-			    elm.querySelector('.title').classList.remove('hidden');
-			    elm.querySelector('.content').classList.add('hidden');
+			  elm.addEventListener('mouseleave', (e) => {
+			  	e.preventDefault();
+			  	hideContent(elm);
+			  });
+			  elm.addEventListener('touchstart', (e) => {
+			  	e.preventDefault();
+			    showContent(elm);
+			  });
+			  elm.addEventListener('touchend', (e) => {
+			  	e.preventDefault();
+			  	hideContent(elm);
 			  });
 			});
 		}
